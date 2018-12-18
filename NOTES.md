@@ -12,3 +12,7 @@
 
 - Created helper file for common utility functions
 - Functionality intact
+
+3. stage-c: Custom route
+
+- /hi -> custom route works

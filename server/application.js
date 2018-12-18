@@ -11,6 +11,9 @@ const MySequence = require("./sequence");
 class Lb4Application extends boot.BootMixin(serviceProxy.ServiceMixin(repository.RepositoryMixin(rest.RestApplication))) {
   constructor(options = {}) {
     super(options);
+
+    this.route('get', '/hi', {responses: {}}, () => 'Hi!');
+
     this.sequence(MySequence);
     this.static('/', path.join(__dirname, '../public'));
     this.bind(restExplorer.RestExplorerBindings.CONFIG).to({
