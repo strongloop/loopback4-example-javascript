@@ -1,35 +1,31 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const boot_1 = require("@loopback/boot");
-const rest_explorer_1 = require("@loopback/rest-explorer");
-const repository_1 = require("@loopback/repository");
-const rest_1 = require("@loopback/rest");
-const service_proxy_1 = require("@loopback/service-proxy");
+
+const boot = require("@loopback/boot");
+const restExplorer = require("@loopback/rest-explorer");
+const repository = require("@loopback/repository");
+const rest = require("@loopback/rest");
+const serviceProxy = require("@loopback/service-proxy");
 const path = require("path");
-const sequence_1 = require("./sequence");
-class Lb4Application extends boot_1.BootMixin(service_proxy_1.ServiceMixin(repository_1.RepositoryMixin(rest_1.RestApplication))) {
-    constructor(options = {}) {
-        super(options);
-        // Set up the custom sequence
-        this.sequence(sequence_1.MySequence);
-        // Set up default home page
-        this.static('/', path.join(__dirname, '../public'));
-        // Customize @loopback/rest-explorer configuration here
-        this.bind(rest_explorer_1.RestExplorerBindings.CONFIG).to({
-            path: '/explorer',
-        });
-        this.component(rest_explorer_1.RestExplorerComponent);
-        this.projectRoot = __dirname;
-        // Customize @loopback/boot Booter Conventions here
-        this.bootOptions = {
-            controllers: {
-                // Customize ControllerBooter Conventions here
-                dirs: ['controllers'],
-                extensions: ['.controller.js'],
-                nested: true,
-            },
-        };
-    }
+const MySequence = require("./sequence");
+
+class Lb4Application extends boot.BootMixin(serviceProxy.ServiceMixin(repository.RepositoryMixin(rest.RestApplication))) {
+  constructor(options = {}) {
+    super(options);
+    this.sequence(MySequence);
+    this.static('/', path.join(__dirname, '../public'));
+    this.bind(restExplorer.RestExplorerBindings.CONFIG).to({
+        path: '/explorer',
+    });
+    this.component(restExplorer.RestExplorerComponent);
+    this.projectRoot = __dirname;
+    this.bootOptions = {
+      controllers: {
+        dirs: ['controllers'],
+        extensions: ['.controller.js'],
+        nested: true,
+      },
+    };
+  }
 }
-exports.Lb4Application = Lb4Application;
-//# sourceMappingURL=application.js.map
+
+module.exports = Lb4Application;

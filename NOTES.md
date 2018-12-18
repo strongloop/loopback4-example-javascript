@@ -6,8 +6,9 @@
 - /explorer available -> components work
 - /ping available -> controllers work
 - / loads -> - static assets served
-- Code is messy for human consumption
+- Code is messy for "human consumption" :D
 
-12. stage-b: Optimize code for human consumption
+2. stage-b: Optimize code for "human consumption"
 
--
+- Created helper file for common utility functions
+- Functionality intact
