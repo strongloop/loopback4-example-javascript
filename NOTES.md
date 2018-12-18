@@ -1,4 +1,4 @@
-1. stage-a: Get the basic app running
+1. stage-a: Got a basic app running
 
 - Files copied and set up from JS files emitted by TS
 - Only code change -> ../../public ../public
@@ -8,7 +8,7 @@
 - / loads -> - static assets served
 - Code is messy for "human consumption" :D
 
-2. stage-b: Optimize code for "human consumption"
+2. stage-b: Optimized code for "human consumption"
 
 - Created helper file for common utility functions
 - Functionality intact
@@ -17,10 +17,15 @@
 
 - /hi -> custom route works
 
-4. stage-d: Add a model
+4. stage-d: Added a model
 
 - Created model
 - Created datasource
 - Created repository
 - Created controller
 - Code is messy for "human consumption"
+
+5. stage-e: Optimize code for "human consumption"
+
+- Model related files cleaned up and optimized
+- Model and functionality intact
