@@ -1,0 +1,6 @@
+{
+  "name": "memory",
+  "connector": "memory",
+  "localStorage": "",
+  "file": "/Users/ibm/projects/hacklab/lb4js/reference-apps/lb4/db.json"
+}

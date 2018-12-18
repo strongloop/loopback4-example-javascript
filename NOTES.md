@@ -16,3 +16,11 @@
 3. stage-c: Custom route
 
 - /hi -> custom route works
+
+4. stage-d: Add a model
+
+- Created model
+- Created datasource
+- Created repository
+- Created controller
+- Code is messy for "human consumption"
