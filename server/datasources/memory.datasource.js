@@ -1,15 +1,11 @@
 "use strict";
 
-const helpers = require('../../lib/helpers.js');
-const decorate = helpers.decorate;
-const metadata = helpers.metadata;
-const param = helpers.param;
-
+const { decorate, metadata, param } = require('../../lib/helpers.js');
 const core = require("@loopback/core");
 const repository = require("@loopback/repository");
 const config = require("./memory.datasource.json");
 
-let MemoryDataSource = class MemoryDataSource extends repository.juggler.DataSource {
+class MemoryDataSource extends repository.juggler.DataSource {
   constructor(dsConfig = config) {
     super(dsConfig);
   }

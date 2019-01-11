@@ -1,14 +1,12 @@
 "use strict";
-const helpers = require('../../lib/helpers.js');
-const decorate = helpers.decorate;
-const metadata = helpers.metadata;
-const param = helpers.param;
 
+const { decorate, metadata, param } = require('../../lib/helpers.js');
 const repository = require("@loopback/repository");
 const rest = require("@loopback/rest");
 const models = require("../models");
 const repositories = require("../repositories");
-let ColorController = class ColorController {
+
+class ColorController {
   constructor(colorRepository) {
     this.colorRepository = colorRepository;
   }

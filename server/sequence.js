@@ -1,15 +1,11 @@
 "use strict";
 
-const helpers = require('../lib/helpers.js');
-const decorate = helpers.decorate;
-const metadata = helpers.metadata;
-const param = helpers.param;
-
+const { decorate, metadata, param } = require('../lib/helpers.js');
 const context = require("@loopback/context");
 const rest = require("@loopback/rest");
 const SequenceActions = rest.RestBindings.SequenceActions;
 
-let MySequence = class MySequence {
+class MySequence {
   constructor(findRoute, parseParams, invoke, send, reject) {
     this.findRoute = findRoute;
     this.parseParams = parseParams;
@@ -32,11 +28,11 @@ let MySequence = class MySequence {
 };
 
 MySequence = decorate([
-  param(0, context.inject(SequenceActions.FIND_ROUTE)),
-  param(1, context.inject(SequenceActions.PARSE_PARAMS)),
-  param(2, context.inject(SequenceActions.INVOKE_METHOD)),
-  param(3, context.inject(SequenceActions.SEND)),
-  param(4, context.inject(SequenceActions.REJECT)),
+  function (target, key) { context.inject(SequenceActions.FIND_ROUTE)(target, key, 0); },
+  function (target, key) { context.inject(SequenceActions.PARSE_PARAMS)(target, key, 1); },
+  function (target, key) { context.inject(SequenceActions.INVOKE_METHOD)(target, key, 2); },
+  function (target, key) { context.inject(SequenceActions.SEND)(target, key, 3); },
+  function (target, key) { context.inject(SequenceActions.REJECT)(target, key, 4); },
   metadata("design:paramtypes", [Function, Function, Function, Function, Function])
 ], MySequence);
 

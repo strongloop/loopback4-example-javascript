@@ -1,10 +1,6 @@
 "use strict";
 
-const helpers = require('../../lib/helpers.js');
-const decorate = helpers.decorate;
-const metadata = helpers.metadata;
-const param = helpers.param;
-
+const { decorate, metadata, param } = require('../../lib/helpers.js');
 const rest = require("@loopback/rest");
 const context = require("@loopback/context");
 
@@ -31,7 +27,7 @@ const PING_RESPONSE = {
   },
 };
 
-let PingController = class PingController {
+class PingController {
   constructor(req) {
     this.req = req;
   }

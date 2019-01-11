@@ -1,11 +1,8 @@
 "use strict";
 
-const helpers = require('../../lib/helpers.js');
-const decorate = helpers.decorate;
-const metadata = helpers.metadata;
-
+const { decorate, metadata } = require('../../lib/helpers.js');
 const repository = require("@loopback/repository");
-let Color = class Color extends repository.Entity {
+class Color extends repository.Entity {
   constructor(data) {
     super(data);
   }
