@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const { decorate, metadata, param } = require('../../lib/helpers.js');
 const rest = require("@loopback/rest");

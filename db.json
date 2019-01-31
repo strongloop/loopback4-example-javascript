@@ -1,10 +1,10 @@
 {
   "ids": {
-    "Color": 10
+    "Color": 11
   },
   "models": {
     "Color": {
-      "1": "{\"id\":1,\"value\":\"string\"}",
+      "1": "{\"id\":1,\"value\":\"red\"}",
       "2": "{\"id\":2,\"value\":\"green\"}",
       "3": "{\"id\":3,\"value\":\"blue\"}",
       "4": "{\"id\":4,\"value\":\"yellow\"}",
@@ -12,7 +12,8 @@
       "6": "{\"id\":6,\"value\":\"black\"}",
       "7": "{\"id\":7,\"value\":\"hello\"}",
       "8": "{\"id\":8,\"value\":\"lolol\"}",
-      "9": "{\"id\":9,\"value\":\"ahaha\"}"
+      "9": "{\"id\":9,\"value\":\"ahaha\"}",
+      "10": "{\"id\":10,\"value\":\"greeen\"}"
     }
   }
 }

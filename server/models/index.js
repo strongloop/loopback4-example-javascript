@@ -1,3 +1,3 @@
-"use strict";
+'use strict';
 
 exports.Color = require('./color.model').Color;
