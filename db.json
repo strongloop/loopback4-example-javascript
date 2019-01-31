@@ -1,6 +1,6 @@
 {
   "ids": {
-    "Color": 11
+    "Color": 12
   },
   "models": {
     "Color": {
@@ -13,7 +13,8 @@
       "7": "{\"id\":7,\"value\":\"hello\"}",
       "8": "{\"id\":8,\"value\":\"lolol\"}",
       "9": "{\"id\":9,\"value\":\"ahaha\"}",
-      "10": "{\"id\":10,\"value\":\"greeen\"}"
+      "10": "{\"id\":10,\"value\":\"greeen\"}",
+      "11": "{\"id\":11,\"value\":\"emerald\"}"
     }
   }
 }
