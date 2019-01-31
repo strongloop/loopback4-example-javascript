@@ -1,40 +1,29 @@
 'use strict';
 
-const { decorate, metadata, param } = require('../../lib/helpers.js');
-const rest = require("@loopback/rest");
-const context = require("@loopback/context");
+const generateBasicController = require('../../lib/basic-controller-generator.js');
 
-const PING_RESPONSE = {
-  description: 'Ping Response',
-  content: {
-    'application/json': {
-        schema: {
-          type: 'object',
-          properties: {
-            greeting: { type: 'string' },
-            date: { type: 'string' },
-            url: { type: 'string' },
-            headers: {
-              type: 'object',
-              properties: {
-                'Content-Type': { type: 'string' },
-              },
-            additionalProperties: true,
-          },
-        },
-      },
-    },
-  },
-};
-
-class PingController {
-  constructor(req) {
-    this.req = req;
-  }
-
-  ping() {
+const operations = {
+  ping: function ping() {
     return {
-      greeting: 'Hello from LoopBack',
+      greeting: 'Ping from LoopBack',
+      date: new Date(),
+      url: this.req.url,
+      headers: Object.assign({}, this.req.headers),
+    };
+  },
+
+  pang: function pang() {
+    return {
+      greeting: 'Pang from LoopBack',
+      date: new Date(),
+      url: this.req.url,
+      headers: Object.assign({}, this.req.headers),
+    };
+  },
+
+  pong: function pong() {
+    return {
+      greeting: 'Pong from LoopBack',
       date: new Date(),
       url: this.req.url,
       headers: Object.assign({}, this.req.headers),
@@ -42,20 +31,119 @@ class PingController {
   }
 };
 
-decorate([
-  rest.get('/ping', {
-    responses: {
-      '200': PING_RESPONSE,
+const specifications = {
+  '/ping': {
+    'get': {
+      'x-controller-name': 'PingController',
+      'x-operation-name': 'ping',
+      'responses': {
+        '200': {
+          'description': 'GET Ping Response',
+          'content': {
+            'application/json': {
+              'schema': {
+                'type': 'object',
+                'properties': {
+                  'greeting': {
+                    'type': 'string'
+                  },
+                  'date': {
+                    'type': 'string'
+                  },
+                  'url': {
+                    'type': 'string'
+                  },
+                  'headers': {
+                    'type': 'object',
+                    'properties': {
+                      'Content-Type': {
+                        'type': 'string'
+                      }
+                    },
+                    'additionalProperties': true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     },
-  }),
-  metadata("design:type", Function),
-  metadata("design:paramtypes", []),
-  metadata("design:returntype", Object)
-], PingController.prototype, "ping", null);
+    'post': {
+      'x-controller-name': 'PingController',
+      'x-operation-name': 'pang',
+      'responses': {
+        '200': {
+          'description': 'POST Ping Response',
+          'content': {
+            'application/json': {
+              'schema': {
+                'type': 'object',
+                'properties': {
+                  'greeting': {
+                    'type': 'string'
+                  },
+                  'date': {
+                    'type': 'string'
+                  },
+                  'url': {
+                    'type': 'string'
+                  },
+                  'headers': {
+                    'type': 'object',
+                    'properties': {
+                      'Content-Type': {
+                        'type': 'string'
+                      }
+                    },
+                    'additionalProperties': true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  '/pong': {
+    'get': {
+      'x-controller-name': 'PingController',
+      'x-operation-name': 'pong',
+      'responses': {
+        '200': {
+          'description': 'GET Pong Response',
+          'content': {
+            'application/json': {
+              'schema': {
+                'type': 'object',
+                'properties': {
+                  'greeting': {
+                    'type': 'string'
+                  },
+                  'date': {
+                    'type': 'string'
+                  },
+                  'url': {
+                    'type': 'string'
+                  },
+                  'headers': {
+                    'type': 'object',
+                    'properties': {
+                      'Content-Type': {
+                        'type': 'string'
+                      }
+                    },
+                    'additionalProperties': true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+  }
+}
 
-PingController = decorate([
-    param(0, context.inject(rest.RestBindings.Http.REQUEST)),
-    metadata("design:paramtypes", [Object])
-], PingController);
-
-exports.PingController = PingController;
+exports.PingPongController = generateBasicController(specifications, operations);
