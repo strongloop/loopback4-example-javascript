@@ -1,6 +1,6 @@
 {
   "ids": {
-    "Color": 14
+    "Color": 7
   },
   "models": {
     "Color": {
@@ -9,14 +9,7 @@
       "3": "{\"id\":3,\"value\":\"blue\"}",
       "4": "{\"id\":4,\"value\":\"yellow\"}",
       "5": "{\"id\":5,\"value\":\"orange\"}",
-      "6": "{\"id\":6,\"value\":\"black\"}",
-      "7": "{\"id\":7,\"value\":\"hello\"}",
-      "8": "{\"id\":8,\"value\":\"lolol\"}",
-      "9": "{\"id\":9,\"value\":\"ahaha\"}",
-      "10": "{\"id\":10,\"value\":\"greeen\"}",
-      "11": "{\"id\":11,\"value\":\"emerald\"}",
-      "12": "{\"id\":12,\"value\":\"gold\"}",
-      "13": "{\"id\":13,\"value\":\"silver\"}"
+      "6": "{\"id\":6,\"value\":\"black\"}"
     }
   }
 }
