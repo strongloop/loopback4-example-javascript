@@ -1,12 +1,12 @@
-"use strict";
+'use strict';
 
-const path = require("path");
-const {BootMixin} = require("@loopback/boot");
-const {RepositoryMixin} = require("@loopback/repository");
-const {RestApplication} = require("@loopback/rest");
-const {ServiceMixin} = require("@loopback/service-proxy");
-const restExplorer = require("@loopback/rest-explorer");
-const MySequence = require("./sequence");
+const path = require('path');
+const {BootMixin} = require('@loopback/boot');
+const {RepositoryMixin} = require('@loopback/repository');
+const {RestApplication} = require('@loopback/rest');
+const {ServiceMixin} = require('@loopback/service-proxy');
+const restExplorer = require('@loopback/rest-explorer');
+const MySequence = require('./sequence');
 
 class Lb4Application extends BootMixin(ServiceMixin(RepositoryMixin(RestApplication))) {
   constructor(options = {}) {
