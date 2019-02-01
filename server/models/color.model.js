@@ -1,6 +1,6 @@
 'use strict';
 
-const generateModel = require('../../lib/model-generator.js');
+const modelFactory = require('../../lib/model-factory');
 const modelDefinition = {
   'properties': {
     // By convetion "id" property should be the id of the model
@@ -21,4 +21,4 @@ const modelDefinition = {
   'methods': {}
 }
 
-exports.Color = generateModel('Color', modelDefinition);
+exports.Color = modelFactory('Color', modelDefinition);

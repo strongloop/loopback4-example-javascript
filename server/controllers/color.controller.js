@@ -1,4 +1,4 @@
 'use strict';
 
-const generateCrudController = require('../../lib/crud-controller-generator.js');
-exports.ColorController = generateCrudController('color');
+const crudControllerFactory = require('../../lib/crud-controller-factory');
+exports.ColorController = crudControllerFactory('color');

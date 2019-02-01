@@ -1,5 +1,5 @@
 'use strict';
 
-const generateDataSource = require('../../lib/datasource-generator.js');
+const datasourceFactory = require('../../lib/datasource-factory');
 const config = require('./memory.datasource.json');
-exports.MemoryDataSource = generateDataSource('memory', config);
+exports.MemoryDataSource = datasourceFactory('memory', config);

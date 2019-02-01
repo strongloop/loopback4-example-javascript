@@ -1,7 +1,7 @@
 'use strict';
 
-const generateRepository = require('../../lib/repository-generator.js');
-exports.ColorRepository = generateRepository({
+const repositoryFactory = require('../../lib/repository-factory');
+exports.ColorRepository = repositoryFactory({
   modelName: 'color',
   datasourceName: 'memory'
 });

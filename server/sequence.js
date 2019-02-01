@@ -1,7 +1,7 @@
 'use strict';
 
-const generateSequence = require('../lib/sequence-generator.js');
-module.exports = generateSequence({
+const sequenceFactory = require('../lib/sequence-factory');
+module.exports = sequenceFactory({
   name: 'MySequence',
   handler: async function (context) {
     try {

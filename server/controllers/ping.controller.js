@@ -1,6 +1,6 @@
 'use strict';
 
-const generateBasicController = require('../../lib/basic-controller-generator.js');
+const customControllerFactory = require('../../lib/custom-controller-factory');
 
 const operations = {
   ping: function ping() {
@@ -38,7 +38,7 @@ const specifications = {
       'x-operation-name': 'ping',
       'responses': {
         '200': {
-          'description': 'GET Ping Response',
+          'description': 'GET to /ping',
           'content': {
             'application/json': {
               'schema': {
@@ -74,7 +74,7 @@ const specifications = {
       'x-operation-name': 'pang',
       'responses': {
         '200': {
-          'description': 'POST Ping Response',
+          'description': 'POST to /ping',
           'content': {
             'application/json': {
               'schema': {
@@ -112,7 +112,7 @@ const specifications = {
       'x-operation-name': 'pong',
       'responses': {
         '200': {
-          'description': 'GET Pong Response',
+          'description': 'GET to /pong',
           'content': {
             'application/json': {
               'schema': {
@@ -146,4 +146,4 @@ const specifications = {
   }
 }
 
-exports.PingPongController = generateBasicController(specifications, operations);
+exports.PingController = customControllerFactory(specifications, operations);
