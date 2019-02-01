@@ -1,7 +1,5 @@
 'use strict';
 
-const customControllerFactory = require('../../lib/custom-controller-factory');
-
 const operations = {
   ping: function ping() {
     return {

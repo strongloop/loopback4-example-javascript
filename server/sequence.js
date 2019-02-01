@@ -1,6 +1,5 @@
 'use strict';
 
-const sequenceFactory = require('../lib/sequence-factory');
 module.exports = sequenceFactory({
   name: 'MySequence',
   handler: async function (context) {

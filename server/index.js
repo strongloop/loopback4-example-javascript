@@ -1,7 +1,9 @@
 'use strict';
 
-const Lb4Application = require("./application");
+// Load the LB4 JavaScript API
+require('../lib/lb4');
 
+const Lb4Application = require("./application");
 async function start(options = {}) {
   const app = new Lb4Application(options);
   await app.boot();

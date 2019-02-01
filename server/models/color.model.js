@@ -1,6 +1,5 @@
 'use strict';
 
-const modelFactory = require('../../lib/model-factory');
 const modelDefinition = {
   'properties': {
     // By convetion "id" property should be the id of the model
