@@ -1,15 +1,10 @@
 {
   "ids": {
-    "Color": 7
+    "Color": 2
   },
   "models": {
     "Color": {
-      "1": "{\"id\":1,\"value\":\"red\"}",
-      "2": "{\"id\":2,\"value\":\"green\"}",
-      "3": "{\"id\":3,\"value\":\"blue\"}",
-      "4": "{\"id\":4,\"value\":\"yellow\"}",
-      "5": "{\"id\":5,\"value\":\"orange\"}",
-      "6": "{\"id\":6,\"value\":\"black\"}"
+      "1": "{\"value\":\"Red\",\"id\":1}"
     }
   }
 }
